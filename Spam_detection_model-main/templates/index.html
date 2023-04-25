@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spam Detection</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bd">
+  <div id="container">
+    <h1>Spam Detection</h1><br />
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      Upload File:
+      <input type="file" accept=".csv" name="file" id="file" /><br /><br />
+      <input id="button" type="submit" value="Submit" />
+    </form>
+    <form action="/forward" method="POST" enctype="multipart/form-data">
+      Enter Text: <input type="text" name="text"> <br /><br/>
+      <input id="button" type="submit" value="Submit" />
+      <div id="result">
+        {{value}}
+      </div>
+  </form>
+
+  </div>
+</body>
+
+</html>
